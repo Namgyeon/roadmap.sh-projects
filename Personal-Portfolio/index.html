@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A Simple HTML-only website" />
+    <!--seo meta tags-->
+    <meta name="keywords" content="index" />
+    <meta name="author" content="Namgyeon" />
+    <meta name="robots" content="index, follow" />
+    <title>index</title>
+    <!-- Tailwind CSS CDN 추가 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen w-full m-0 p-0 box-border bg-white dark:bg-gray-900 text-black dark:text-white"
+  >
+    <header class="flex flex-col gap-4 py-4 md:px-6 border border-gray-300">
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center md:justify-between"
+      >
+        <h1 class="text-2xl font-bold">Namgyeon</h1>
+        <button id="darkModeToggle">다크모드</button>
+        <nav>
+          <ul class="flex items-center gap-4">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/articles.html">Articles</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex flex-col md:p-10 items-center gap-2">
+        <h2 class="text-2xl font-bold">Frontend Developer</h2>
+        <p class="text-gray-500">html only with proper layout, no styling</p>
+      </div>
+    </header>
+    <main class="flex flex-col md:flex-row">
+      <section class="flex flex-col items-center border border-gray-300">
+        <h2
+          class="w-full md:px-5 py-4 text-center md:text-left text-2xl font-bold border-b md:border-none border-gray-300"
+        >
+          Projects
+        </h2>
+        <p
+          class="w-full md:px-5 py-2 text-center md:text-left border-b border-gray-300 bg-gray-100 md:bg-transparent truncate"
+        >
+          HTML Only Portfolio
+        </p>
+        <ul class="w-full">
+          <li
+            class="w-full md:px-5 py-2 text-center md:text-left border-b border-gray-300 bg-gray-100 md:bg-transparent"
+          >
+            Calculator
+          </li>
+          <li
+            class="w-full md:px-5 py-2 text-center md:text-left border-b border-gray-300 bg-gray-100 md:bg-transparent"
+          >
+            Quiz App
+          </li>
+          <li
+            class="w-full md:px-5 py-2 text-center md:text-left border-b border-gray-300 bg-gray-100 md:bg-transparent"
+          >
+            Countdown Timer
+          </li>
+          <li
+            class="w-full md:px-5 py-2 text-center md:text-left border-b md:border-none border-gray-300 bg-gray-100 md:bg-transparent"
+          >
+            Product Upcoming Page
+          </li>
+        </ul>
+      </section>
+      <section class="flex flex-col border border-gray-300">
+        <h2
+          class="w-full md:px-5 py-4 text-center md:text-left text-2xl font-bold border-b md:border-none border-gray-300"
+        >
+          Work Experience
+        </h2>
+        <article
+          class="p-4 border md:border-t-0 border-gray-300 bg-gray-100 md:bg-transparent"
+        >
+          <h3 class="text-lg font-bold">roadmap.sh</h3>
+          <p>Solved all the frontend projects</p>
+          <a href="#" class="text-blue-500">Visit my profile</a>
+        </article>
+
+        <article
+          class="p-4 border border-gray-300 md:border-none bg-gray-100 md:bg-transparent"
+        >
+          <h3 class="text-lg font-bold">OpenSource Work</h3>
+          <p>
+            Contributed to 50 opensource projects. Made my own projects with 200
+            GitHub Stars.
+          </p>
+          <a href="#" class="text-blue-500">Visit my GitHub profile</a>
+        </article>
+      </section>
+      <section class="p-4 border border-gray-300">
+        <h2 class="w-full py-4 text-center text-2xl font-bold">Education</h2>
+        <ul>
+          <li>- Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>- Quod expedita itaque est, magnam reprehenderit impedit</li>
+          <li>- repudiandae ad aliquam consequuntur. Commodi nostrum,</li>
+          <li>- modi sed reiciendis consectetur assumenda tempora tenetur</li>
+          <li>- adipisci inventore!</li>
+          <li>- adipisci inventore!</li>
+        </ul>
+      </section>
+    </main>
+    <aside class="p-5 border-t border-gray-300">
+      <h2 class="w-full py-4 text-center text-2xl font-bold">
+        Reviews from my Teachers
+      </h2>
+      <div class="flex gap-6">
+        <article class="p-5 border border-gray-300 rounded-2xl">
+          <p>
+            John doe was a brilliant student. He was always on time and ready to
+            learn.
+          </p>
+        </article>
+        <article class="p-5 border border-gray-300 rounded-md hidden md:block">
+          <p>
+            John doe was a brilliant student. He was always on time and ready to
+            learn.
+          </p>
+        </article>
+        <article class="p-5 border border-gray-300 rounded-md hidden md:block">
+          <p>
+            John doe was a brilliant student. He was always on time and ready to
+            learn.
+          </p>
+        </article>
+      </div>
+    </aside>
+    <footer class="p-5">
+      <p class="text-center">&copy; Copyright 2025 Namgyeon</p>
+    </footer>
+
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+
+      const isDarkMode = localStorage.getItem("isDarkMode") === "true";
+
+      if (isDarkMode) {
+        document.documentElement.classList.add("dark");
+      }
+
+      darkModeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("isDarkMode", isDark);
+      });
+    </script>
+  </body>
+</html>
