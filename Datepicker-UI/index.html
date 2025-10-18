@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datepicker UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="flex flex-col gap-4 justify-center items-center h-screen">
+      <div>
+        <!-- 날짜 입력 -->
+        <div class="flex flex-col">
+          <div class="flex items-center">
+            <input
+              type="text"
+              placeholder="dd / mm / yyyy"
+              class="border border-black p-2"
+            />
+            <button class="border border-black p-2">
+              <i class="fa-solid fa-calendar-days"></i>
+            </button>
+          </div>
+        </div>
+        <!-- 달력 -->
+        <div class="flex flex-col border border-black">
+          <!-- 헤더 -->
+          <div class="flex flex-col gap-4 p-4 border-b border-black">
+            <div class="flex items-center justify-between gap-4">
+              <button>
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <p>August 2025</p>
+              <button>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <ul class="flex items-center justify-between">
+              <li>s</li>
+              <li>M</li>
+              <li>T</li>
+              <li>W</li>
+              <li>T</li>
+              <li>F</li>
+              <li>S</li>
+            </ul>
+          </div>
+          <!-- 달력 -->
+          <ul id="calendar-days" class="grid grid-cols-7"></ul>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const calendar = document.getElementById("calendar-days");
+      const days = 31;
+
+      for (let i = 1; i <= days; i++) {
+        const day = document.createElement("li");
+        day.textContent = i;
+        day.className = "p-2 text-center border-r border-b border-black";
+        if (i % 7 === 0) {
+          day.className += " border-r-0";
+        }
+        if (i > 28) {
+          day.className += " border-b-0";
+        }
+        if (i === days) {
+          day.className += " border-r-0";
+        }
+        calendar.appendChild(day);
+      }
+
+      const totalCells = 35;
+      const emptyCells = totalCells - days;
+
+      for (let i = 0; i < emptyCells; i++) {
+        const emptyCell = document.createElement("li");
+        emptyCell.className = "p-2 text-center border-l border-black";
+        calendar.appendChild(emptyCell);
+      }
+    </script>
+  </body>
+</html>
