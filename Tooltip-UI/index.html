@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tooltip-ui</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="mt-20 flex justify-center items-center">
+      <nav class="">
+        <ul class="flex gap-4">
+          <li>Home</li>
+          <li class="group relative">
+            Projects
+            <p
+              class="hidden absolute bottom-10 left-1/2 -translate-x-1/2 group-hover:block p-2 bg-black text-white rounded-md whitespace-nowrap"
+            >
+              Here is everything I have built
+            </p>
+            <div
+              class="hidden absolute bottom-8 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45 bg-black group-hover:block"
+            ></div>
+          </li>
+
+          <li>Blog</li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
